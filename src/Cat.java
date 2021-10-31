@@ -1,13 +1,14 @@
-import java.util
-import Pet
+/*
+Filename: Cat.java
+Note: Inherits from Pet
+@author: C0MPU73R
+*/
 public class Cat extends Pet
 {
-	public Cat(String petType, String petName, int petAge, int daysStay) 
+	public Cat(String petType, String petName, int petAge, int daysStay)
 	{
-		Pet.Pet(petType, petName, petAge, daysStay);
+		super(petType, petName, petAge,  daysStay);
+
 	}
-	public static void main(String[] args)
-	{
-		
-	}
+
 }
