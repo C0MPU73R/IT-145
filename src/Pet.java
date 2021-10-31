@@ -42,8 +42,9 @@ public class Pet
         System.out.println("Welcome to PetBAG");
         System.out.println("How many pets are you storing?");
         numOfPets = scnr.nextInt();
-        //Lets use a loop here so we can get muliple pets from the user if necessary.
-        for (int index = 0; index < numOfPets; index++) {
+        //Lets use a loop here so we can get multiple pets from the user if necessary.
+        for (int index = 0; index < numOfPets; index++) 
+        {
             System.out.println("Go ahead and enter your pet's credentials\n\n");
 
             System.out.println("Pet type: ");
@@ -59,8 +60,6 @@ public class Pet
             daysStay = scnr.nextInt();
 
             pet_storage.add(new Pet(petType, petName, petAge, daysStay)); //Store a new pet obj
-
-
 
         }
     }
