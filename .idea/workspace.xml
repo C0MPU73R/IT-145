@@ -1,23 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e227b69a-2986-45b9-ac93-bf724b540ca7" name="Changes" comment="" />
+    <list default="true" id="f0003481-7a5f-440c-af72-81bbffe71592" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Module1/.classpath" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module1/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module1/.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module1/src/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module1/src/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module1/src/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module1/src/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module1/src/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module1/src/Cat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module1/src/Dog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module1/src/IT-145.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module1/src/Pet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module1/src/PetLAB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ModuleOneProgram.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IT-145.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PetLAB.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="20FqwkQy2JFdgyNPtgnEZ60foJn" />
+  <component name="ProjectId" id="20c5ZOFu7MCF8SK4IWEoBn2lQFS" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -29,16 +50,16 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Module2" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e227b69a-2986-45b9-ac93-bf724b540ca7" name="Changes" comment="" />
-      <created>1635650929890</created>
+      <changelist id="f0003481-7a5f-440c-af72-81bbffe71592" name="Changes" comment="" />
+      <created>1636331106225</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1635650929890</updated>
+      <updated>1636331106225</updated>
     </task>
     <servers />
   </component>
@@ -52,6 +73,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
