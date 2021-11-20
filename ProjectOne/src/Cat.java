@@ -1,7 +1,6 @@
 /*
  * @filename: Cat.java
  * @author: Nick Cleveland
- *
  */
 public class Cat extends Pet {
 
@@ -13,6 +12,7 @@ public class Cat extends Pet {
 
     public Cat(String petType, String petName, int petAge, int daysStay) {
         super(petType, petName, petAge, daysStay);
+        setCatSpaceNumber(catSpaceNumber);
     }
 
     public void setCatSpaceNumber(int catSpaceNumber) {

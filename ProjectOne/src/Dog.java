@@ -1,7 +1,6 @@
 /*
  * @filename: Dog.java
  * @author: Nick Cleveland
- *
  */
 public class Dog extends Pet {
 

@@ -5,7 +5,6 @@ import java.util.Scanner;
 /*
 * @filename: petBAG.java
 * @author: Nick Cleveland
-*
 */
 public class petBAG {
 
@@ -13,6 +12,8 @@ public class petBAG {
     private static String petName;
     private static int petAge;
     private static int daysStaying;
+    private static int catSpaceNumber = 0; //can have 12 in total
+    private static int dogSpaceNumber = 0; //can have 30 in total
 
     private final ArrayList<Dog> dogHolder = new ArrayList<>(30); // limit is 30
     private final ArrayList<Cat> catHolder = new ArrayList<>(12); //limit is 12
@@ -55,6 +56,10 @@ public class petBAG {
         else if (Objects.equals(petType, "Cat"))
         {
             catHolder.add(new Cat(petType, petName, petAge, daysStaying));
+        }
+        else
+        {
+            System.out.println("Invalid pet type");
         }
     }
 
