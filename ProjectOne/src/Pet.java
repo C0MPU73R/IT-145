@@ -1,11 +1,22 @@
+/*
+ * @filename: Pet.java
+ * @author: Nick Cleveland
+ *
+ */
 public class Pet {
+
     private String petType;
     private String petName;
     private int petAge;
+    private int dogSpaces;
+    private int catSpaces;
+    private int daysStay;
+    private double amountDue;
 
     public Pet() {
 
     }
+
     public Pet(String petType, String petName, int petAge) {
         this.petType = petType;
         this.petName = petName;
@@ -17,7 +28,7 @@ public class Pet {
     }
 
     public String getPetType() {
-        return petType;
+        return this.petType;
     }
 
     public void setPetName(String petName) {
@@ -25,7 +36,7 @@ public class Pet {
     }
 
     public String getPetName() {
-        return petName;
+        return this.petName;
     }
 
     public void setPetAge(int petAge) {
@@ -33,6 +44,38 @@ public class Pet {
     }
 
     public int getPetAge() {
-        return petAge;
+        return this.petAge;
+    }
+
+    public void setDogSpaces(int dogSpaces) {
+        this.dogSpaces = dogSpaces;
+    }
+    public int getDogSpaces()
+    {
+        return this.dogSpaces;
+    }
+
+    public void setCatSpaces(int catSpaces) {
+        this.catSpaces = catSpaces;
+    }
+
+    public int getCatSpaces() {
+        return this.catSpaces;
+    }
+
+    public void setDaysStay(int daysStay) {
+        this.daysStay = daysStay;
+    }
+
+    public int getDaysStay() {
+        return this.daysStay;
+    }
+
+    public void setAmountDue(double amountDue) {
+        this.amountDue = amountDue;
+    }
+
+    public double getAmountDue() {
+        return this.amountDue;
     }
 }
