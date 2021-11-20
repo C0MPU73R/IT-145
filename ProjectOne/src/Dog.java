@@ -13,8 +13,8 @@ public class Dog extends Pet {
     public Dog(){
     }
 
-    public Dog(String petType, String petName, int petAge) {
-        super(petType, petName, petAge);
+    public Dog(String petType, String petName, int petAge, int daysStay) {
+        super(petType, petName, petAge, daysStay);
     }
 
     public void setGrooming(boolean grooming) {

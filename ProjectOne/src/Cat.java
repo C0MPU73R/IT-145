@@ -11,8 +11,8 @@ public class Cat extends Pet {
 
     }
 
-    public Cat(String petType, String petName, int petAge) {
-        super(petType, petName, petAge);
+    public Cat(String petType, String petName, int petAge, int daysStay) {
+        super(petType, petName, petAge, daysStay);
     }
 
     public void setCatSpaceNumber(int catSpaceNumber) {

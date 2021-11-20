@@ -17,10 +17,11 @@ public class Pet {
 
     }
 
-    public Pet(String petType, String petName, int petAge) {
+    public Pet(String petType, String petName, int petAge, int daysStay) {
         this.petType = petType;
         this.petName = petName;
         this.petAge = petAge;
+        this.daysStay = daysStay;
     }
 
     public void setPetType(String petType) {
