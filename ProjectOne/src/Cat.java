@@ -13,7 +13,6 @@ public class Cat extends Pet {
         super(petType, petName, petAge, petWeight, isGroomed, daysStay, petSpaceNumber);
     }
 
-
     public void setGroomed(boolean isGroomed) {
         System.out.println("Cats cannot be groomed");
     }
