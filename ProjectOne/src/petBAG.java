@@ -102,29 +102,29 @@ public class petBAG {
         int weight;
         double cost;
         for (int i = 0; i < petHolder.size(); i++) {
-            if (Objects.equals(petHolder[i].getPetType(), "Dog")) {
+            if (Objects.equals(petHolder.get(i).getPetType(), "Dog")) {
                 //get the dog's weight and calculate cost
 
-                weight = petHolder[i].getWeight;
+                weight = petHolder.get(i).getWeight;
 
                 if (weight >= 30) {
-                    petHolder[i].updateAmountDue(34.00);
-                    if (petHolder[i].isGroomed()) {
-                        petHolder[i].updateAmountDue(29.95);
+                    petHolder.get(i).updateAmountDue(34.00);
+                    if (petHolder.get(i).isGroomed()) {
+                        petHolder.get(i).updateAmountDue(29.95);
                     }
                 } else if (weight >= 20) {
-                    petHolder[i].updateAmountDue(29.00);
-                    if (petHolder[i].isGroomed()) {
-                        petHolder[i].updateAmountDue(24.95);
+                    petHolder.get(i).updateAmountDue(29.00);
+                    if (petHolder.get(i).isGroomed()) {
+                        petHolder.get(i).updateAmountDue(24.95);
                     }
                 } else {
-                    petHolder[i].updateAmountDue(24.00);
-                    if (petHolder[i].isGroomed()) {
-                        petHolder[i].updateAmountDue(19.95);
+                    petHolder.get(i).updateAmountDue(24.00);
+                    if (petHolder.get(i).isGroomed()) {
+                        petHolder.get(i).updateAmountDue(19.95);
                     }
                 }
-            } else if (Objects.equals(petHolder[i].getPetType(), "Cat")) {
-                petHolder[i].updateAmountDue(18.00); //fixed price for any cat weight.
+            } else if (Objects.equals(petHolder.get(i).getPetType(), "Cat")) {
+                petHolder.get(i).updateAmountDue(18.00); //fixed price for any cat weight.
             }
         }
     }
@@ -132,8 +132,8 @@ public class petBAG {
     public static Pet getPet(String name) {
         Pet p = null;
         for (int i = 0; i < petHolder.size(); i++) {
-            if (Objects.equals(petHolder[i].getName, name)) {
-             p = petHolder[i];
+            if (Objects.equals(petHolder.get(i).getName, name)) {
+             p = petHolder.get(i);
              petHolder.remove(i); //clean up
              break;
             }

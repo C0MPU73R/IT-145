@@ -58,6 +58,14 @@ public class Pet {
         return petWeight;
     }
 
+    public void setGroomed(boolean groomed) {
+        isGroomed = groomed;
+    }
+
+    public boolean isGroomed() {
+        return isGroomed;
+    }
+
     public void setPetSpaceNumber(int petSpaceNumber) {
         this.petSpaceNumber = petSpaceNumber;
     }
