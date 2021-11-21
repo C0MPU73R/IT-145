@@ -6,22 +6,22 @@ public class Dog extends Pet {
 
     private int dogSpaceNumber;
     private double dogWeight;
-    private boolean grooming;
+    private boolean groomed;
 
 
-    public Dog(){
+    public Dog() {
     }
 
-    public Dog(String petType, String petName, int petAge, int daysStay) {
-        super(petType, petName, petAge, daysStay);
+    public Dog(String petType, String petName, int petAge, double petWeight, boolean isGroomed, int daysStay, int petSpaceNumber) {
+        super(petType, petName, petAge, petWeight, isGroomed, daysStay, petSpaceNumber);
     }
 
-    public void setGrooming(boolean grooming) {
-        this.grooming = grooming;
+    public void setGroomed(boolean isGroomed) {
+        this.groomed = isGroomed;
     }
 
-    public boolean getGrooming() {
-        return this.grooming;
+    public boolean getGroomed() {
+        return this.groomed;
     }
 
     public void setDogWeight(double dogWeight) {

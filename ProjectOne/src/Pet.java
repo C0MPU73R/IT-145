@@ -7,20 +7,23 @@ public class Pet {
     private String petType;
     private String petName;
     private int petAge;
-    private int dogSpaces;
-    private int catSpaces;
+    private double petWeight;
+    private int petSpaceNumber;
+    private boolean isGroomed;
     private int daysStay;
     private double amountDue;
 
     public Pet() {
-
     }
 
-    public Pet(String petType, String petName, int petAge, int daysStay) {
+    public Pet(String petType, String petName, int petAge, double petWeight, boolean isGroomed, int daysStay, int petSpaceNumber) {
         this.petType = petType;
         this.petName = petName;
         this.petAge = petAge;
+        this.petWeight = petWeight;
+        this.isGroomed = isGroomed;
         this.daysStay = daysStay;
+        this.petSpaceNumber = petSpaceNumber;
     }
 
     public void setPetType(String petType) {
@@ -47,32 +50,32 @@ public class Pet {
         return this.petAge;
     }
 
-    public void setDogSpaces(int dogSpaces) {
-        this.dogSpaces = dogSpaces;
-    }
-    public int getDogSpaces()
-    {
-        return this.dogSpaces;
+    public void setPetWeight(double petWeight) {
+        this.petWeight = petWeight;
     }
 
-    public void setCatSpaces(int catSpaces) {
-        this.catSpaces = catSpaces;
+    public double getPetWeight() {
+        return petWeight;
     }
 
-    public int getCatSpaces() {
-        return this.catSpaces;
+    public void setPetSpaceNumber(int petSpaceNumber) {
+        this.petSpaceNumber = petSpaceNumber;
     }
 
-    public void setDaysStay(int daysStay) {
+    public int getPetSpaceNumber() {
+        return this.petSpaceNumber;
+    }
+
+    public void setDaysStaying(int daysStay) {
         this.daysStay = daysStay;
     }
 
-    public int getDaysStay() {
+    public int getDaysStaying() {
         return this.daysStay;
     }
 
-    public void setAmountDue(double amountDue) {
-        this.amountDue = amountDue;
+    public void updateAmountDue(double amountDue) {
+        this.amountDue += amountDue;
     }
 
     public double getAmountDue() {
