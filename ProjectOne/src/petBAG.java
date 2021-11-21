@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
@@ -15,9 +16,10 @@ public class petBAG {
     private static int catSpaceNumber = 0; //can have 12 in total
     private static int dogSpaceNumber = 0; //can have 30 in total
 
-    private final ArrayList<Dog> dogHolder = new ArrayList<>(30); // limit is 30
-    private final ArrayList<Cat> catHolder = new ArrayList<>(12); //limit is 12
+    //private final ArrayList<Dog> dogHolder = new ArrayList<>(); // limit is 30
+    //private final ArrayList<Cat> catHolder = new ArrayList<>(); //limit is 12
 
+    private ArrayList<Pet> petHolder = new ArrayList<>();
     public static void main (String[] args) {
 
         newCustomer();
@@ -26,8 +28,6 @@ public class petBAG {
 
     public static void newCustomer()
     {
-
-
         Scanner scnr = new Scanner(System.in);
         System.out.println("Welcome to PetBAG.");
         System.out.print("What kind of pet are you storing today?: ");
@@ -45,6 +45,7 @@ public class petBAG {
 
 
         addPet(petType, petName, petAge, daysStaying);
+
     }
 
     public static void addPet(String petType, String petName, int petAge, int daysStaying)
@@ -52,10 +53,12 @@ public class petBAG {
         if (Objects.equals(petType, "Dog")) //do a test here for content equality, not obj comparison.
         {
             dogHolder.add(new Dog(petType, petName, petAge, daysStaying));
+            dogSpaceNumber++;
         }
         else if (Objects.equals(petType, "Cat"))
         {
             catHolder.add(new Cat(petType, petName, petAge, daysStaying));
+            catSpaceNumber++;
         }
         else
         {
@@ -65,6 +68,20 @@ public class petBAG {
 
     public static void performPetTasks() {
 
+    }
+
+    public Pet getPet(string name) {
+        Pet p = null;
+        for (int i = 0; i < petHolder.length; i++)
+        {
+            if (Objects.equals(petHolder.get(i).getName, name))
+            {
+             p = petHolder.get(i);
+             petHolder.remove(i); //clean up
+             break;
+            }
+        }
+        return p;
     }
 
 }

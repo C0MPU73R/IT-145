@@ -1,7 +1,6 @@
 /*
  * @filename: Pet.java
  * @author: Nick Cleveland
- *
  */
 public class Pet {
 
