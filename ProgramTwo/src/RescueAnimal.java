@@ -1,3 +1,8 @@
+/*
+@filename: Monkey.java
+@purpose: IT-145, SNHU
+@editor: Nick Cleveland
+*/
 import java.lang.String;
 
 public class RescueAnimal {

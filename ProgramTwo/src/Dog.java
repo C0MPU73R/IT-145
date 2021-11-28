@@ -1,10 +1,18 @@
-
+/*
+@filename: Dog.java
+@purpose: IT-145, SNHU
+@editor: Nick Cleveland
+*/
 public class Dog extends RescueAnimal {
 
     // Instance variable
     private String breed;
 
-    // Constructor
+    // Constructors
+
+    public Dog() {
+    // Default constructor
+    }
     public Dog(String name, String breed, String gender, String age,
                String weight, String acquisitionDate, String acquisitionCountry,
                String trainingStatus, boolean reserved, String inServiceCountry) {

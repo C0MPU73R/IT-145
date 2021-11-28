@@ -1,3 +1,8 @@
+/*
+@filename: Driver.java
+@purpose: IT-145, SNHU
+@editor: Nick Cleveland
+*/
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -16,6 +21,7 @@ public class Driver {
         do {
             displayMenu();
             userInput = scnr.next().charAt(0);
+            processChoice(userInput); //process the user input as the chosen character
         } while (userInput != 'q');
 
         // Add a loop that displays the menu, accepts the users input
@@ -43,6 +49,38 @@ public class Driver {
         System.out.println("Enter a menu selection");
     }
 
+    public static void processChoice(char input) {
+        Scanner scnr = new Scanner(System.in);
+        switch(input) {
+            case '1':
+                System.out.println("[1] Intake new dog selected");
+                intakeNewDog(scnr); //take the scanner object itself.
+                break;
+            case '2':
+                System.out.println("[2] Intake new monkey selected");
+                intakeNewMonkey(scnr); //take the scanner object itself
+                break;
+            case '3':
+                System.out.println("[3] Reserve an animal selected");
+                reserveAnimal(scnr); //TODO Not yet implemented.
+                break;
+            case '4':
+                System.out.println("[4] Print a list of all dogs selected");
+                printAnimals(); //TODO Not yet implemented.
+                break;
+            case '5':
+                System.out.println("[5] Print a list of all monkeys selected");
+                printAnimals(); //TODO Not yet implemented.
+                break;
+            case '6':
+                System.out.println("[6] Print a list of all non-reserved animals selected");
+                printAnimals(); //TODO Not yet implemented.
+                break;
+            default:
+                break;
+        }
+    }
+
 
     // Adds dogs to a list for testing
     public static void initializeDogList() {
@@ -59,6 +97,14 @@ public class Driver {
     // Adds monkeys to a list for testing
     //Optional for testing
     public static void initializeMonkeyList() {
+        Monkey monkey1 = new Monkey(); //Use default constructor for testing only
+        Monkey monkey2 = new Monkey();
+        Monkey monkey3 = new Monkey();
+
+        monkeyList.add(monkey1); //test for adding monkey objects to our arraylist
+        monkeyList.add(monkey2);
+        monkeyList.add(monkey3);
+
 
     }
 
@@ -76,7 +122,7 @@ public class Driver {
             }
         }
 
-        // Add the code to instantiate a new dog and add it to the appropriate list
+        // TODO Add the code to instantiate a new dog and add it to the appropriate list
     }
 
 
@@ -85,7 +131,16 @@ public class Driver {
     // For the project submission you must also  validate the input
     // to make sure the monkey doesn't already exist and the species type is allowed
     public static void intakeNewMonkey(Scanner scanner) {
-        System.out.println("The method intakeNewMonkey needs to be implemented");
+        System.out.println("What is the monkey's name?");
+        String name = scanner.nextLine();
+        for(Monkey monkey: monkeyList) {
+            if(monkey.getName().equalsIgnoreCase(name)) {
+                System.out.println("\n\nThis monkey is already in our system\n\n");
+                return; //returns to menu
+            }
+        }
+
+        // TODO Add the code to instantiate a new monkey and add it to the appropriate list
     }
 
     // Complete reserveAnimal
@@ -109,6 +164,7 @@ public class Driver {
     // To score "exemplary" you must correctly implement the "available" list.
     public static void printAnimals() {
         System.out.println("The method printAnimals needs to be implemented");
+        //TODO
 
     }
 }
