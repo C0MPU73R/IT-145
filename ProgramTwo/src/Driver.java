@@ -97,13 +97,9 @@ public class Driver {
     // Adds monkeys to a list for testing
     //Optional for testing
     public static void initializeMonkeyList() {
-        Monkey monkey1 = new Monkey(); //Use default constructor for testing only
-        Monkey monkey2 = new Monkey();
-        Monkey monkey3 = new Monkey();
+        Monkey monkey1 = new Monkey("Carl", "Guenon", "male", "5", "60.6", "3.0", "4", "6", "12-12-2016", "Canada", "in service", true, "Canada");
 
         monkeyList.add(monkey1); //test for adding monkey objects to our arraylist
-        monkeyList.add(monkey2);
-        monkeyList.add(monkey3);
 
 
     }
@@ -113,16 +109,49 @@ public class Driver {
     // The input validation to check that the dog is not already in the list
     // is done for you
     public static void intakeNewDog(Scanner scanner) {
+        String name;
+        String breed;
+        String gender;
+        String age;
+        String weight;
+        String acquisitionDate;
+        String acquisitionCountry;
+        String trainingStatus;
+        boolean reserved;
+        String inServiceCountry;
+
         System.out.println("What is the dog's name?");
-        String name = scanner.nextLine();
+        name = scanner.nextLine();
         for(Dog dog: dogList) {
             if(dog.getName().equalsIgnoreCase(name)) {
                 System.out.println("\n\nThis dog is already in our system\n\n");
                 return; //returns to menu
             }
         }
+        System.out.println("What is the breed of the dog?");
+        breed  = scanner.nextLine();
 
-        // TODO Add the code to instantiate a new dog and add it to the appropriate list
+        System.out.println("What is the gender of the dog?");
+        gender  = scanner.nextLine();
+
+        System.out.println("What is the age of the dog?");
+        age  = scanner.nextLine();
+
+        System.out.println("What is the weight of the dog?");
+        weight  = scanner.nextLine();
+
+        acquisitionDate = ""; //TODO: How to generate this date?
+
+        acquisitionCountry =""; // TODO: How to get the country? From user maybe?
+
+        trainingStatus = "intake"; //All new dogs get the label intake before training.
+        reserved = false; //Since this is a new dog and not trained, it cannot be reserved
+
+        inServiceCountry = ""; //A new dog cannot be yet in-service.
+
+        dogList.add(new Dog(name, breed, gender, age, weight, acquisitionDate, acquisitionCountry, trainingStatus,
+                reserved, inServiceCountry));
+
     }
 
 
@@ -131,8 +160,22 @@ public class Driver {
     // For the project submission you must also  validate the input
     // to make sure the monkey doesn't already exist and the species type is allowed
     public static void intakeNewMonkey(Scanner scanner) {
+        String name;
+        String species;
+        String gender;
+        String age;
+        String weight;
+        String tailLength;
+        String height;
+        String bodyLength;
+        String acquisitionDate;
+        String acquisitionCountry;
+        String trainingStatus;
+        boolean reserved;
+        String inServiceCountry;
+
         System.out.println("What is the monkey's name?");
-        String name = scanner.nextLine();
+        name = scanner.nextLine();
         for(Monkey monkey: monkeyList) {
             if(monkey.getName().equalsIgnoreCase(name)) {
                 System.out.println("\n\nThis monkey is already in our system\n\n");
@@ -140,7 +183,40 @@ public class Driver {
             }
         }
 
-        // TODO Add the code to instantiate a new monkey and add it to the appropriate list
+        System.out.println("What is the species of the monkey?");
+        species  = scanner.nextLine();
+
+        System.out.println("What is the gender of the monkey?");
+        gender  = scanner.nextLine();
+
+        System.out.println("What is the age of the monkey?");
+        age  = scanner.nextLine();
+
+        System.out.println("What is the weight of the monkey?");
+        weight  = scanner.nextLine();
+
+        System.out.println("What is the monkey's tail length?");
+        tailLength = scanner.nextLine();
+
+        System.out.println("What is the monkey's height?");
+        height = scanner.nextLine();
+
+        System.out.println("What is the monkey's body length?");
+        bodyLength = scanner.nextLine();
+
+        acquisitionDate = ""; //TODO: How to generate this date?
+
+        acquisitionCountry =""; // TODO: How to get the country? From user maybe?
+
+        trainingStatus = "intake"; //All new monkeys get the label intake before training.
+        reserved = false; //Since this is a new monkey and not trained, it cannot be reserved
+
+        inServiceCountry = ""; //A new monkey cannot be yet in-service.
+
+        monkeyList.add(new Monkey(name, species, gender, age, weight, tailLength, height, bodyLength, acquisitionDate,
+                acquisitionCountry, trainingStatus,
+                reserved, inServiceCountry));
+
     }
 
     // Complete reserveAnimal
