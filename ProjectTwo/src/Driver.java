@@ -13,15 +13,15 @@ public class Driver {
 
     public static void main(String[] args) {
 
-
-        initializeDogList();
+        initializeDogList(); //initializers
         initializeMonkeyList();
+
         Scanner scnr = new Scanner(System.in);
         char userInput;
         do {
             displayMenu();
             userInput = scnr.next().charAt(0);
-            processChoice(userInput); //process the user input as the chosen character
+            processChoice(userInput, scnr); //process the user input as the chosen character, attempt to pass the scanner object
         } while (userInput != 'q');
 
         // Add a loop that displays the menu, accepts the users input
@@ -31,7 +31,6 @@ public class Driver {
         // Hint: create a Scanner and pass it to the necessary
         // methods
         // Hint: Menu options 4, 5, and 6 should all connect to the printAnimals() method.
-
     }
 
     // This method prints the menu options
@@ -49,8 +48,7 @@ public class Driver {
         System.out.println("Enter a menu selection");
     }
 
-    public static void processChoice(char input) {
-        Scanner scnr = new Scanner(System.in);
+    public static void processChoice(char input, Scanner scnr) {
         switch(input) {
             case '1':
                 System.out.println("[1] Intake new dog selected");
@@ -81,7 +79,6 @@ public class Driver {
         }
     }
 
-
     // Adds dogs to a list for testing
     public static void initializeDogList() {
         Dog dog1 = new Dog("Spot", "German Shepherd", "male", "1", "25.6", "05-12-2019", "United States", "intake", false, "United States");
@@ -100,10 +97,7 @@ public class Driver {
         Monkey monkey1 = new Monkey("Carl", "Guenon", "male", "5", "60.6", "3.0", "4", "6", "12-12-2016", "Canada", "in service", true, "Canada");
 
         monkeyList.add(monkey1); //test for adding monkey objects to our arraylist
-
-
     }
-
 
     // Complete the intakeNewDog method
     // The input validation to check that the dog is not already in the list
@@ -121,7 +115,7 @@ public class Driver {
         String inServiceCountry;
 
         System.out.println("What is the dog's name?");
-        name = scanner.nextLine();
+        name = scanner.next();
         for(Dog dog: dogList) {
             if(dog.getName().equalsIgnoreCase(name)) {
                 System.out.println("\n\nThis dog is already in our system\n\n");
@@ -129,16 +123,16 @@ public class Driver {
             }
         }
         System.out.println("What is the breed of the dog?");
-        breed  = scanner.nextLine();
+        breed  = scanner.next();
 
         System.out.println("What is the gender of the dog?");
-        gender  = scanner.nextLine();
+        gender  = scanner.next();
 
         System.out.println("What is the age of the dog?");
-        age  = scanner.nextLine();
+        age  = scanner.next();
 
         System.out.println("What is the weight of the dog?");
-        weight  = scanner.nextLine();
+        weight  = scanner.next();
 
         acquisitionDate = ""; //TODO: How to generate this date?
 
@@ -151,9 +145,7 @@ public class Driver {
 
         dogList.add(new Dog(name, breed, gender, age, weight, acquisitionDate, acquisitionCountry, trainingStatus,
                 reserved, inServiceCountry));
-
     }
-
 
     // Complete intakeNewMonkey
     //Instantiate and add the new monkey to the appropriate list
@@ -175,7 +167,7 @@ public class Driver {
         String inServiceCountry;
 
         System.out.println("What is the monkey's name?");
-        name = scanner.nextLine();
+        name = scanner.next();
         for(Monkey monkey: monkeyList) {
             if(monkey.getName().equalsIgnoreCase(name)) {
                 System.out.println("\n\nThis monkey is already in our system\n\n");
@@ -184,25 +176,25 @@ public class Driver {
         }
 
         System.out.println("What is the species of the monkey?");
-        species  = scanner.nextLine();
+        species  = scanner.next();
 
         System.out.println("What is the gender of the monkey?");
-        gender  = scanner.nextLine();
+        gender  = scanner.next();
 
         System.out.println("What is the age of the monkey?");
-        age  = scanner.nextLine();
+        age  = scanner.next();
 
         System.out.println("What is the weight of the monkey?");
-        weight  = scanner.nextLine();
+        weight  = scanner.next();
 
         System.out.println("What is the monkey's tail length?");
-        tailLength = scanner.nextLine();
+        tailLength = scanner.next();
 
         System.out.println("What is the monkey's height?");
-        height = scanner.nextLine();
+        height = scanner.next();
 
         System.out.println("What is the monkey's body length?");
-        bodyLength = scanner.nextLine();
+        bodyLength = scanner.next();
 
         acquisitionDate = ""; //TODO: How to generate this date?
 
