@@ -1,5 +1,8 @@
-
-
+/*
+@filename: Monkey.java
+@purpose: IT-145, SNHU
+@editor: Nick Cleveland
+*/
 import java.lang.String;
 
 public class RescueAnimal {
@@ -18,7 +21,23 @@ public class RescueAnimal {
 
 
     // Constructor
+
     public RescueAnimal() {
+
+    }
+    public RescueAnimal(String name, String animalType, String gender, String age, String weight,
+                        String acquisitionDate, String acquisitionCountry, String trainingStatus, boolean reserved,
+                        String inServiceCountry) {
+        setName(name); // All methods added to constructor to initialize values
+        setAnimalType(animalType);
+        setGender(gender);
+        setAge(age);
+        setWeight(weight);
+        setAcquisitionDate(acquisitionDate);
+        setAcquisitionLocation(acquisitionCountry);
+        setTrainingStatus(trainingStatus);
+        setReserved(reserved);
+        setInServiceCountry(inServiceCountry);
     }
 
 
@@ -110,8 +129,6 @@ public class RescueAnimal {
     public void setInServiceCountry(String inServiceCountry) {
         this.inServiceCountry = inServiceCountry;
     }
-
-
 
 
     public String getTrainingStatus() {

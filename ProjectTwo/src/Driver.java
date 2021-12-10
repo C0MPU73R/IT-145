@@ -1,15 +1,28 @@
+/*
+@filename: Driver.java
+@purpose: IT-145, SNHU
+@editor: Nick Cleveland
+*/
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Driver {
     private static ArrayList<Dog> dogList = new ArrayList<Dog>();
     // Instance variables (if needed)
+    private static ArrayList<Monkey> monkeyList = new ArrayList<Monkey>();
 
     public static void main(String[] args) {
 
 
         initializeDogList();
         initializeMonkeyList();
+        Scanner scnr = new Scanner(System.in);
+        char userInput;
+        do {
+            displayMenu();
+            userInput = scnr.next().charAt(0);
+            processChoice(userInput); //process the user input as the chosen character
+        } while (userInput != 'q');
 
         // Add a loop that displays the menu, accepts the users input
         // and takes the appropriate action.
@@ -36,6 +49,38 @@ public class Driver {
         System.out.println("Enter a menu selection");
     }
 
+    public static void processChoice(char input) {
+        Scanner scnr = new Scanner(System.in);
+        switch(input) {
+            case '1':
+                System.out.println("[1] Intake new dog selected");
+                intakeNewDog(scnr); //take the scanner object itself.
+                break;
+            case '2':
+                System.out.println("[2] Intake new monkey selected");
+                intakeNewMonkey(scnr); //take the scanner object itself
+                break;
+            case '3':
+                System.out.println("[3] Reserve an animal selected");
+                reserveAnimal(scnr); //TODO Not yet implemented.
+                break;
+            case '4':
+                System.out.println("[4] Print a list of all dogs selected");
+                printAnimals(); //TODO Not yet implemented.
+                break;
+            case '5':
+                System.out.println("[5] Print a list of all monkeys selected");
+                printAnimals(); //TODO Not yet implemented.
+                break;
+            case '6':
+                System.out.println("[6] Print a list of all non-reserved animals selected");
+                printAnimals(); //TODO Not yet implemented.
+                break;
+            default:
+                break;
+        }
+    }
+
 
     // Adds dogs to a list for testing
     public static void initializeDogList() {
@@ -52,6 +97,10 @@ public class Driver {
     // Adds monkeys to a list for testing
     //Optional for testing
     public static void initializeMonkeyList() {
+        Monkey monkey1 = new Monkey("Carl", "Guenon", "male", "5", "60.6", "3.0", "4", "6", "12-12-2016", "Canada", "in service", true, "Canada");
+
+        monkeyList.add(monkey1); //test for adding monkey objects to our arraylist
+
 
     }
 
@@ -60,16 +109,49 @@ public class Driver {
     // The input validation to check that the dog is not already in the list
     // is done for you
     public static void intakeNewDog(Scanner scanner) {
+        String name;
+        String breed;
+        String gender;
+        String age;
+        String weight;
+        String acquisitionDate;
+        String acquisitionCountry;
+        String trainingStatus;
+        boolean reserved;
+        String inServiceCountry;
+
         System.out.println("What is the dog's name?");
-        String name = scanner.nextLine();
+        name = scanner.nextLine();
         for(Dog dog: dogList) {
             if(dog.getName().equalsIgnoreCase(name)) {
                 System.out.println("\n\nThis dog is already in our system\n\n");
                 return; //returns to menu
             }
         }
+        System.out.println("What is the breed of the dog?");
+        breed  = scanner.nextLine();
 
-        // Add the code to instantiate a new dog and add it to the appropriate list
+        System.out.println("What is the gender of the dog?");
+        gender  = scanner.nextLine();
+
+        System.out.println("What is the age of the dog?");
+        age  = scanner.nextLine();
+
+        System.out.println("What is the weight of the dog?");
+        weight  = scanner.nextLine();
+
+        acquisitionDate = ""; //TODO: How to generate this date?
+
+        acquisitionCountry =""; // TODO: How to get the country? From user maybe?
+
+        trainingStatus = "intake"; //All new dogs get the label intake before training.
+        reserved = false; //Since this is a new dog and not trained, it cannot be reserved
+
+        inServiceCountry = ""; //A new dog cannot be yet in-service.
+
+        dogList.add(new Dog(name, breed, gender, age, weight, acquisitionDate, acquisitionCountry, trainingStatus,
+                reserved, inServiceCountry));
+
     }
 
 
@@ -78,7 +160,63 @@ public class Driver {
     // For the project submission you must also  validate the input
     // to make sure the monkey doesn't already exist and the species type is allowed
     public static void intakeNewMonkey(Scanner scanner) {
-        System.out.println("The method intakeNewMonkey needs to be implemented");
+        String name;
+        String species;
+        String gender;
+        String age;
+        String weight;
+        String tailLength;
+        String height;
+        String bodyLength;
+        String acquisitionDate;
+        String acquisitionCountry;
+        String trainingStatus;
+        boolean reserved;
+        String inServiceCountry;
+
+        System.out.println("What is the monkey's name?");
+        name = scanner.nextLine();
+        for(Monkey monkey: monkeyList) {
+            if(monkey.getName().equalsIgnoreCase(name)) {
+                System.out.println("\n\nThis monkey is already in our system\n\n");
+                return; //returns to menu
+            }
+        }
+
+        System.out.println("What is the species of the monkey?");
+        species  = scanner.nextLine();
+
+        System.out.println("What is the gender of the monkey?");
+        gender  = scanner.nextLine();
+
+        System.out.println("What is the age of the monkey?");
+        age  = scanner.nextLine();
+
+        System.out.println("What is the weight of the monkey?");
+        weight  = scanner.nextLine();
+
+        System.out.println("What is the monkey's tail length?");
+        tailLength = scanner.nextLine();
+
+        System.out.println("What is the monkey's height?");
+        height = scanner.nextLine();
+
+        System.out.println("What is the monkey's body length?");
+        bodyLength = scanner.nextLine();
+
+        acquisitionDate = ""; //TODO: How to generate this date?
+
+        acquisitionCountry =""; // TODO: How to get the country? From user maybe?
+
+        trainingStatus = "intake"; //All new monkeys get the label intake before training.
+        reserved = false; //Since this is a new monkey and not trained, it cannot be reserved
+
+        inServiceCountry = ""; //A new monkey cannot be yet in-service.
+
+        monkeyList.add(new Monkey(name, species, gender, age, weight, tailLength, height, bodyLength, acquisitionDate,
+                acquisitionCountry, trainingStatus,
+                reserved, inServiceCountry));
+
     }
 
     // Complete reserveAnimal
@@ -102,6 +240,7 @@ public class Driver {
     // To score "exemplary" you must correctly implement the "available" list.
     public static void printAnimals() {
         System.out.println("The method printAnimals needs to be implemented");
+        //TODO
 
     }
 }
