@@ -14,8 +14,8 @@ public class Driver {
 
     public static void main(String[] args) {
 
-        //initializeDogList(); // test initializers
-        //initializeMonkeyList();
+        // initializeDogList(); // test initializers
+        // initializeMonkeyList();
 
         Scanner scnr = new Scanner(System.in);
         char userInput;
@@ -73,7 +73,7 @@ public class Driver {
                 break;
             case '6':
                 System.out.println("[6] Print a list of all non-reserved animals selected");
-                printAnimals(""); //TODO Not yet implemented.
+                printNonReservedAnimals();
                 break;
 
             case 'q':
@@ -283,18 +283,35 @@ public class Driver {
     public static void printAnimals(String animal) {
         if (Objects.equals(animal, "Dog")) {
             for (Dog dog : dogList) {
-                System.out.printf("Dog name: %s\nDog breed: %s\nDog gender: %s\nDog age: %s\nDog weight: %s\n",
+                System.out.printf("Dog name: %s\nDog breed: %s\nDog gender: %s\nDog age: %s\nDog weight: %s\n\n\n",
                         dog.getName(), dog.getBreed(), dog.getGender(), dog.getAge(), dog.getWeight());
             }
         }
         else if (Objects.equals(animal, "Monkey")) {
             for (Monkey monkey : monkeyList) {
-                System.out.printf("Monkey name: %s\nMonkey species: %s\nMonkey gender: %s\nMonkey age: %s\nMonkey weight: %s\n",
-                        monkey.getName(), monkey.getSpecies(), monkey.getGender(), monkey.getAge(), monkey.getWeight());
+                System.out.printf("Monkey name: %s\nMonkey species: %s\nMonkey gender: %s\nMonkey age: %s\nMonkey weight: %s\nMonkey tail length: %s\nMonkey height: %s\nMonkey body length: %s\n\n\n",
+                        monkey.getName(), monkey.getSpecies(), monkey.getGender(), monkey.getAge(), monkey.getWeight(), monkey.getTailLength(), monkey.getHeight(), monkey.getBodyLength());
 
             }
         }
 
+    }
+    public static void printNonReservedAnimals() {  //Used a separate method here to prevent cluttering
+        System.out.println("List of dogs that are available:");
+        for (Dog dog : dogList) {
+            if (!dog.getReserved()) {
+                System.out.printf("Dog name: %s\nDog breed: %s\nDog gender: %s\nDog age: %s\nDog weight: %s\n\n\n",
+                        dog.getName(), dog.getBreed(), dog.getGender(), dog.getAge(), dog.getWeight());
+                }
+            }
+
+        System.out.println("List of monkeys that are available:");
+        for (Monkey monkey : monkeyList) {
+            if (!monkey.getReserved()) {
+                System.out.printf("Monkey name: %s\nMonkey species: %s\nMonkey gender: %s\nMonkey age: %s\nMonkey weight: %s\nMonkey tail length: %s\nMonkey height: %s\nMonkey body length: %s\n\n\n",
+                        monkey.getName(), monkey.getSpecies(), monkey.getGender(), monkey.getAge(), monkey.getWeight(), monkey.getTailLength(), monkey.getHeight(), monkey.getBodyLength());
+            }
+        }
     }
 }
 
