@@ -4,6 +4,7 @@
 @editor: Nick Cleveland
 */
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Driver {
@@ -13,8 +14,8 @@ public class Driver {
 
     public static void main(String[] args) {
 
-        initializeDogList(); //initializers
-        initializeMonkeyList();
+        //initializeDogList(); // test initializers
+        //initializeMonkeyList();
 
         Scanner scnr = new Scanner(System.in);
         char userInput;
@@ -60,7 +61,7 @@ public class Driver {
                 break;
             case '3':
                 System.out.println("[3] Reserve an animal selected");
-                reserveAnimal(scnr); //TODO Not yet implemented.
+                reserveAnimal(scnr);
                 break;
             case '4':
                 System.out.println("[4] Print a list of all dogs selected");
@@ -75,6 +76,7 @@ public class Driver {
                 printAnimals(); //TODO Not yet implemented.
                 break;
             default:
+                System.out.println("Invalid choice.");
                 break;
         }
     }
@@ -102,6 +104,7 @@ public class Driver {
     // Complete the intakeNewDog method
     // The input validation to check that the dog is not already in the list
     // is done for you
+    //Intakes a new Dog object and adds it to the Dog List
     public static void intakeNewDog(Scanner scanner) {
         String name;
         String breed;
@@ -151,6 +154,7 @@ public class Driver {
     //Instantiate and add the new monkey to the appropriate list
     // For the project submission you must also  validate the input
     // to make sure the monkey doesn't already exist and the species type is allowed
+    //Intakes a new Monkey object and adds it to the Monkey List
     public static void intakeNewMonkey(Scanner scanner) {
         String name;
         String species;
@@ -170,7 +174,7 @@ public class Driver {
         name = scanner.next();
         for(Monkey monkey: monkeyList) {
             if(monkey.getName().equalsIgnoreCase(name)) {
-                System.out.println("\n\nThis monkey is already in our system\n\n");
+                System.out.println("\n\nThis monkey is already in our system\n\n"); //Check to see if monkey already here
                 return; //returns to menu
             }
         }
@@ -196,9 +200,9 @@ public class Driver {
         System.out.println("What is the monkey's body length?");
         bodyLength = scanner.next();
 
-        acquisitionDate = ""; //TODO: How to generate this date?
+        acquisitionDate = ""; //Set to blank string fo now
 
-        acquisitionCountry =""; // TODO: How to get the country? From user maybe?
+        acquisitionCountry =""; //Set to blank String for now
 
         trainingStatus = "intake"; //All new monkeys get the label intake before training.
         reserved = false; //Since this is a new monkey and not trained, it cannot be reserved
@@ -214,7 +218,48 @@ public class Driver {
     // Complete reserveAnimal
     // You will need to find the animal by animal type and in service country
     public static void reserveAnimal(Scanner scanner) {
-        System.out.println("The method reserveAnimal needs to be implemented");
+        boolean dogFound = false;
+        boolean monkeyFound = false;
+        System.out.println("What kind of animal?");
+        String animalType = scanner.next();
+
+        System.out.println("What in-service country?");
+        String country = scanner.next();
+
+        if (Objects.equals(animalType, "Dog")) {
+            for (Dog dog : dogList) {
+                if (!dog.getReserved()) { // if the dog is not reserved
+                    dog.setAcquisitionLocation(country);
+                    dog.setReserved(true); //set this specific dog to now being reserved
+                    dogFound = true;
+                    break; //The first available dog found has now been set the country and is now reserved.
+                }
+            }
+            if (dogFound) {
+                System.out.println("Ok, a dog has been found, reserved for you and set to the country");
+
+            } else {
+                System.out.println("Sorry, there does not seem to be any non-reserved dogs at this time.");
+
+            }
+        }
+        else if (Objects.equals(animalType, "Monkey")) {
+            for (Monkey monkey: monkeyList) {
+                if (!monkey.getReserved()) { // if the monkey is not reserved
+                    monkey.setAcquisitionLocation(country);
+                    monkey.setReserved(true); //set this specific monkey to now being reserved
+                    monkeyFound = true;
+                    break; //The first available monkey found has now been set the country and is now reserved.
+                }
+            }
+            if (monkeyFound) {
+                System.out.println("Ok, a monkey has been found, reserved for you and set to the country");
+
+            } else {
+                System.out.println("Sorry, there does not seem to be any non-reserved monkeys at this time.");
+
+            }
+        }
 
     }
 

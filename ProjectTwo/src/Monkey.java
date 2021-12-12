@@ -7,6 +7,7 @@ public class Monkey  extends RescueAnimal{
     private String tailLength;
     private String height;
     private String bodyLength;
+    private String species;
 
     public Monkey() {
         // Default constructor
@@ -16,7 +17,7 @@ public class Monkey  extends RescueAnimal{
                   String trainingStatus, boolean reserved, String inServiceCountry) {
 
         setName(name); // All methods added to constructor to initialize values
-        setAnimalType(species);
+        setSpecies(species); // This method is not inherited, but is specific to our monkey class
         setGender(gender);
         setAge(age);
         setWeight(weight);
@@ -32,6 +33,14 @@ public class Monkey  extends RescueAnimal{
 
     }
     //These methods, attribs are specific to the Monkey only
+
+    public String getSpecies() {
+    return this.species;
+    }
+
+    public void setSpecies(String species) {
+        this.species = species;
+    }
 
     public String getTailLength() {
         return this.tailLength;
