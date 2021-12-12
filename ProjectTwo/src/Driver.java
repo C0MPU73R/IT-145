@@ -65,15 +65,18 @@ public class Driver {
                 break;
             case '4':
                 System.out.println("[4] Print a list of all dogs selected");
-                printAnimals(); //TODO Not yet implemented.
+                printAnimals("Dog"); //This can be hard-coded since it is only used for dogs
                 break;
             case '5':
                 System.out.println("[5] Print a list of all monkeys selected");
-                printAnimals(); //TODO Not yet implemented.
+                printAnimals("Monkey"); //This can be hard-coded since it is only used for monkeys
                 break;
             case '6':
                 System.out.println("[6] Print a list of all non-reserved animals selected");
-                printAnimals(); //TODO Not yet implemented.
+                printAnimals(""); //TODO Not yet implemented.
+                break;
+
+            case 'q':
                 break;
             default:
                 System.out.println("Invalid choice.");
@@ -81,6 +84,7 @@ public class Driver {
         }
     }
 
+    // FOR TESTING ONLY
     // Adds dogs to a list for testing
     public static void initializeDogList() {
         Dog dog1 = new Dog("Spot", "German Shepherd", "male", "1", "25.6", "05-12-2019", "United States", "intake", false, "United States");
@@ -93,6 +97,7 @@ public class Driver {
     }
 
 
+    // FOR TESTING ONLY
     // Adds monkeys to a list for testing
     //Optional for testing
     public static void initializeMonkeyList() {
@@ -200,7 +205,7 @@ public class Driver {
         System.out.println("What is the monkey's body length?");
         bodyLength = scanner.next();
 
-        acquisitionDate = ""; //Set to blank string fo now
+        acquisitionDate = ""; //Set to blank string for now
 
         acquisitionCountry =""; //Set to blank String for now
 
@@ -238,7 +243,7 @@ public class Driver {
             if (dogFound) {
                 System.out.println("Ok, a dog has been found, reserved for you and set to the country");
 
-            } else {
+            } else { //There was not a dog found
                 System.out.println("Sorry, there does not seem to be any non-reserved dogs at this time.");
 
             }
@@ -255,7 +260,7 @@ public class Driver {
             if (monkeyFound) {
                 System.out.println("Ok, a monkey has been found, reserved for you and set to the country");
 
-            } else {
+            } else { //There was not a monkey found
                 System.out.println("Sorry, there does not seem to be any non-reserved monkeys at this time.");
 
             }
@@ -275,9 +280,20 @@ public class Driver {
     // Remember that you only have to fully implement ONE of these lists.
     // The other lists can have a print statement saying "This option needs to be implemented".
     // To score "exemplary" you must correctly implement the "available" list.
-    public static void printAnimals() {
-        System.out.println("The method printAnimals needs to be implemented");
-        //TODO
+    public static void printAnimals(String animal) {
+        if (Objects.equals(animal, "Dog")) {
+            for (Dog dog : dogList) {
+                System.out.printf("Dog name: %s\nDog breed: %s\nDog gender: %s\nDog age: %s\nDog weight: %s\n",
+                        dog.getName(), dog.getBreed(), dog.getGender(), dog.getAge(), dog.getWeight());
+            }
+        }
+        else if (Objects.equals(animal, "Monkey")) {
+            for (Monkey monkey : monkeyList) {
+                System.out.printf("Monkey name: %s\nMonkey species: %s\nMonkey gender: %s\nMonkey age: %s\nMonkey weight: %s\n",
+                        monkey.getName(), monkey.getSpecies(), monkey.getGender(), monkey.getAge(), monkey.getWeight());
+
+            }
+        }
 
     }
 }
